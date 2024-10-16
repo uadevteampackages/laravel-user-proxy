@@ -1,7 +1,7 @@
 {
     "name": "mbjonesua/laravel-user-proxy",
     "description": "Laravel User Proxy",
-    "version": "1.0",
+    "version": "0.2",
     "license": "MIT",
     "type": "library",
     "require": {
