@@ -1,6 +1,6 @@
 <?php
 
-namespace OITDevelopmentTeam\LaravelUserProxy\Http\Controllers;
+namespace Mbjonesua\LaravelUserProxy\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
