@@ -11,7 +11,7 @@
             <div class="flex items-center justify-between space-x-3 mb-5">
                 <div class="w-1/5">Currently In Full Proxy Mode?</div>
                 <div class="w-1/6 font-bold">
-                    {{ session('ull_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
+                    {{ session('full_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                 </div>
                 <div class="w-1/4">
                     <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" 
