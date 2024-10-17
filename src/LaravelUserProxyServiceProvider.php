@@ -16,7 +16,7 @@ class LaravelUserProxyServiceProvider extends ServiceProvider
         // Load routes from your package
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
-        Blade::component('laravel-user-proxy::components.user-proxy-mode-bar', 'user-proxy-mode-bar');
+        Blade::component('laravel-user-proxy::components.laravel-user-proxy-bar', 'laravel-user-proxy-bar');
 
     }
 
