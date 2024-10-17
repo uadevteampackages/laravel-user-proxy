@@ -39,7 +39,7 @@ class QuickProxyController extends Controller
 
         session()->put($data['quick_proxy_session_key'], $data['quick_proxy_session_value']);
 
-        return view('laravel-user-proxy::laravel-user-proxy.index');
+        return redirect()->to('/laravel-user-proxy');
     }
 
 
@@ -58,7 +58,7 @@ class QuickProxyController extends Controller
         session()->forget('quick_proxy_session_key');
         session()->forget('quick_proxy_session_value');
 
-        return view('laravel-user-proxy::laravel-user-proxy.index');
+        return redirect()->to('/laravel-user-proxy');
     }
     
 

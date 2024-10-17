@@ -46,17 +46,11 @@
                 <h2 class="mb-5">Proxy Mode</h2>
 
                 <div class="flex items-center justify-between space-x-1 mb-5">
-                    <div class="w-1/4">Currently In Full Proxy Mode?</div>
-                    <div class="w-1/10 font-bold">
+                    <div class="w-1/3">Currently In Full Proxy Mode?</div>
+                    <div class="w-1/3 font-bold">
                         {{ session('full_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                     </div>
-                    <div class="w-1/4">
-                        <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" 
-                        class="px-5 py-2 rounded-full bg-lime-500 text-black font-bold hover:bg-lime-400 block text-center">
-                            Full Proxy Settings
-                        </a>
-                    </div>
-                    <div class="w-1/4">
+                    <div class="w-1/3">
                         @if (session('full_proxy_mode') == true)
                             <a href="{{ url('/laravel-user-proxy/exit-full-proxy-mode') }}" 
                             class="px-5 py-2 rounded-full bg-black text-lime-300 font-bold hover:bg-gray-800 block text-center">

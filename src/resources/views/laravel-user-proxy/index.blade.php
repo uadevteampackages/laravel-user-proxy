@@ -92,6 +92,18 @@
 
 
 
+
+            @if (session('quick_proxy_mode'))
+                <div class="bg-slate-200 p-5 m-5 rounded">
+                    <h2>Quick Proxy Session Variables</h2>
+
+                    quick_proxy_session_key:  <span class="font-bold">{{ session('quick_proxy_session_key') }}</span><br/>
+                    quick_proxy_session_value:  <span class="font-bold">{{ session('quick_proxy_session_value') }}</span><br/>
+                    {{ session('quick_proxy_session_key') }}:  <span class="font-bold">{{ session('quick_proxy_session_value') }}</span>
+                </div>
+            @endif
+
+
             
 
             <div class="bg-slate-200 p-5 m-5 rounded">
@@ -128,7 +140,7 @@
 
 
             <div class="bg-slate-200 p-5 m-5 rounded">
-                <h2>Real MS User (these values will be blank when not in proxy mode)</h2>
+                <h2>Real MS User (these values will be blank unless you are in full proxy mode)</h2>
 
                 real_ms_bannerUsername: <span class="font-bold">{{ session('real_ms_username') }}</span><br/>
                 real_ms_id:  <span class="font-bold">{{ session('real_ms_id') }}</span><br/>

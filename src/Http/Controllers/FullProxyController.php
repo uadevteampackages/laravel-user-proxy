@@ -82,7 +82,7 @@ class FullProxyController extends Controller
         session()->put('ms:principalName', $proxy_ms_user->principalName);
         session()->put('ms:id', $proxy_ms_user->id);
 
-        return view('laravel-user-proxy::laravel-user-proxy.index', compact('user_from_entra'));
+        return redirect()->to('/laravel-user-proxy');
     }
 
 
