@@ -71,7 +71,7 @@
 
                     <div class="mb-5">
                         <label for="quick_proxy_session_key" class="mr-3">
-                            Enter a key for your proxy session variable:
+                            Enter a key for your quick proxy session variable:
                         </label>
                         <input type="text" 
                             name="quick_proxy_session_key" 
@@ -84,7 +84,7 @@
 
                     <div class="mb-5">
                         <label for="quick_proxy_session_value" class="mr-3">
-                            Enter a value for your proxy session variable:
+                            Enter a value for your quick proxy session variable:
                         </label>
                         <input type="text" 
                             name="quick_proxy_session_value" 
@@ -96,7 +96,7 @@
 
 
                     <button type="submit" class="rounded-full my-5 px-5 py-3 bg-black text-lime-300">
-                        Add Quick Proxy Session Variable Now
+                        Enter Quick Proxy Mode with the Above Session Variable
                     </button>
                 </form>
             </div>
