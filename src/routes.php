@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Mbjonesua\LaravelUserProxy\Http\Controllers\ProxyController;
-use Mbjonesua\LaravelUserProxy\Http\Controllers\FullProxyController;
-use Mbjonesua\LaravelUserProxy\Http\Controllers\QuickProxyController;
+use Uadevteampackages\LaravelUserProxy\Http\Controllers\ProxyController;
+use Uadevteampackages\LaravelUserProxy\Http\Controllers\FullProxyController;
+use Uadevteampackages\LaravelUserProxy\Http\Controllers\QuickProxyController;
 
 Route::group(['middleware' => ['web', 'ms-auth']], function () {
    

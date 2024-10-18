@@ -1,10 +1,10 @@
 <?php
 
-namespace Mbjonesua\LaravelUserProxy;
+namespace Uadevteampackages\LaravelUserProxy;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Mbjonesua\LaravelUserProxy\LaravelUserProxy;
+use Uadevteampackages\LaravelUserProxy\LaravelUserProxy;
 
 class LaravelUserProxyServiceProvider extends ServiceProvider
 {

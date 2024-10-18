@@ -1,6 +1,6 @@
 <?php
 
-namespace Mbjonesua\LaravelUserProxy;
+namespace Uadevteampackages\LaravelUserProxy;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Mbjonesua\LaravelUserProxy\Http\Controllers;
+namespace Uadevteampackages\LaravelUserProxy\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use Mbjonesua\LaravelUserProxy\Services\MsGraphApiService;
+use Uadevteampackages\LaravelUserProxy\Services\MsGraphApiService;
 
 class FullProxyController extends Controller
 {

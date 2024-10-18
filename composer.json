@@ -9,12 +9,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mbjonesua\\LaravelUserProxy\\": "src"
+            "Uadevteampackages\\LaravelUserProxy\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mbjonesua\\LaravelUserProxy\\Tests\\": "tests"
+            "Uadevteampackages\\LaravelUserProxy\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -27,10 +27,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mbjonesua\\LaravelUserProxy\\LaravelUserProxyServiceProvider"
+                "Uadevteampackages\\LaravelUserProxy\\LaravelUserProxyServiceProvider"
             ],
             "aliases": {
-                "LaravelUserProxy": "Mbjonesua\\LaravelUserProxy\\LaravelUserProxyFacade"
+                "LaravelUserProxy": "Uadevteampackages\\LaravelUserProxy\\LaravelUserProxyFacade"
             }
         }
     }

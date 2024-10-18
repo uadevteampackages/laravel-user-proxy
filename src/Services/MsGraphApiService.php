@@ -1,6 +1,6 @@
 <?php
 
-namespace Mbjonesua\LaravelUserProxy\Services;
+namespace Uadevteampackages\LaravelUserProxy\Services;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
