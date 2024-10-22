@@ -1,7 +1,7 @@
 <div>
     <div style="background-color: #a3e635; padding: 20px;">
         <div style="width: 80%; margin-left: auto; margin-right: auto;">
-            <h2 style="margin-top: 20px; margin-bottom: 20px;">Laravel User Proxy</h2>
+            <h2 style="font-size: 30px; font-weight: bold; margin-bottom: 20px; margin-top: 5px;">Laravel User Proxy</h2>
 
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px;">
                 <div style="width: 20%;">Currently In Full Proxy Mode?</div>
