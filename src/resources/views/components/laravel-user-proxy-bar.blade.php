@@ -1,67 +1,57 @@
 <div>
+    <div style="background-color: #a3e635; padding: 20px;">
+        <div style="width: 80%; margin-left: auto; margin-right: auto;">
+            <h2 style="margin-top: 20px; margin-bottom: 20px;">Laravel User Proxy</h2>
 
-    
-    <div class="bg-lime-300 p-5">
-
-        <div class="w-4/5 mx-auto">
-
-
-            <h2 class="my-5">Laravel User Proxy</h2>
-
-            <div class="flex items-center justify-between space-x-3 mb-5">
-                <div class="w-1/5">Currently In Full Proxy Mode?</div>
-                <div class="w-1/6 font-bold">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px;">
+                <div style="width: 20%;">Currently In Full Proxy Mode?</div>
+                <div style="width: 16.666%; font-weight: bold;">
                     {{ session('full_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                 </div>
-                <div class="w-1/4">
+                <div style="width: 25%;">
                     <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" 
-                    class="px-5 py-2 rounded-full bg-white text-black font-bold hover:bg-black hover:text-lime-300 block text-center">
+                       style="padding: 10px 20px; border-radius: 9999px; background-color: white; 
+                              color: black; font-weight: bold; text-align: center; display: block; 
+                              text-decoration: none;">
                         Full Proxy Settings
                     </a>
                 </div>
-                <div class="w-1/4">
+                <div style="width: 25%;">
                     @if (session('full_proxy_mode') == true)
                         <a href="{{ url('/laravel-user-proxy/exit-full-proxy-mode') }}" 
-                        class="px-5 py-2 rounded-full bg-black text-lime-300 font-bold hover:bg-white hover:text-black block text-center">
+                           style="padding: 10px 20px; border-radius: 9999px; background-color: black; 
+                                  color: #a3e635; font-weight: bold; text-align: center; display: block; 
+                                  text-decoration: none;">
                             Exit Full Proxy Mode
                         </a>
                     @endif
                 </div>
             </div>
 
-            <div class="flex items-center justify-between space-x-3 mb-5">
-                <div class="w-1/5">Currently In Quick Proxy Mode?</div>
-                <div class="w-1/6 font-bold">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px;">
+                <div style="width: 20%;">Currently In Quick Proxy Mode?</div>
+                <div style="width: 16.666%; font-weight: bold;">
                     {{ session('quick_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                 </div>
-                <div class="w-1/4">
+                <div style="width: 25%;">
                     <a href="{{ url('/laravel-user-proxy/console-quick-proxy') }}" 
-                    class="px-5 py-2 rounded-full bg-white text-black font-bold hover:bg-black hover:text-lime-300 block text-center">
+                       style="padding: 10px 20px; border-radius: 9999px; background-color: white; 
+                              color: black; font-weight: bold; text-align: center; display: block; 
+                              text-decoration: none;">
                         Quick Proxy Settings
                     </a>
                 </div>
-                <div class="w-1/4">
+                <div style="width: 25%;">
                     @if (session('quick_proxy_mode') == true)
                         <a href="{{ url('/laravel-user-proxy/exit-quick-proxy-mode') }}" 
-                        class="px-5 py-2 rounded-full bg-black text-lime-300 font-bold hover:bg-white hover:text-black block text-center">
+                           style="padding: 10px 20px; border-radius: 9999px; background-color: black; 
+                                  color: #a3e635; font-weight: bold; text-align: center; display: block; 
+                                  text-decoration: none;">
                             Exit Quick Proxy Mode
                         </a>
                     @endif
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
-
-
-    
 </div>
-
-
-
-
-
-    
