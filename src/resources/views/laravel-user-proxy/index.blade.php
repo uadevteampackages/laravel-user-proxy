@@ -10,6 +10,136 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        <style>
+            
+            .lup_heading_container {
+                margin-left: auto; 
+                margin-right: auto; 
+                margin-top: 20px; 
+                margin-bottom: 20px; 
+                width: 60%; 
+                border-radius: 8px; 
+                background-color: black; 
+                color: #a3e635; 
+                padding-left: 28px; 
+                padding-right: 28px; 
+                padding-top: 20px; 
+                padding-bottom: 20px;
+            }
+
+            .lup_heading_container h1 {
+                font-size: 30px; 
+                font-weight: bold; 
+                margin-bottom: 20px;
+            }
+
+            .lup_heading_container h1 a {
+                color: #a3e635; 
+                text-decoration: none;
+            }
+
+            .lup_heading_container h2 {
+                font-size: 22px; 
+                font-weight: bold; 
+                margin-bottom: 20px;
+            }
+
+            .lup_heading_container p {
+                color: white; 
+                margin-bottom:15px;
+            }
+
+            .lup_heading_container a {
+                color: #a3e635; 
+                text-decoration: underline;
+            }
+
+            .lup_heading_container p a {
+                color: #a3e635; 
+                text-decoration: underline;
+            }
+
+            .lup_heading_container p a:hover {
+                color: #84cc16;
+            }
+
+            .lup_heading_container ol {
+                list-style-type: decimal;
+                list-style-position: inside;
+                color: white;
+            }
+
+            .lup_heading_container ul {
+                list-style-type: disc;
+                list-style-position: inside;
+                color: white;
+            }
+
+            .lup_heading_container ol li, .lup_heading_container ul li {
+                margin-bottom: 10px;
+            }
+
+
+
+            .lup_body_container {
+                margin-left: auto;        
+                margin-right: auto;       
+                margin-bottom: 20px;    
+                width: 60%;         
+                border-radius: 0.5rem;  
+                border-width: 1px;      
+                border-color: black;      
+                border-style: solid;      
+                padding: 20px;            
+            }
+
+            .lup_body_container h2 {
+                font-weight:bold; 
+                margin-bottom:10px; 
+                font-size:18px;
+            }
+
+            .lup_body_container .module_box {
+                background-color: #e2e8f0; 
+                padding: 20px; 
+                margin: 20px; 
+                border-radius: 6px;
+            }
+
+            .lup_body_container .module_box ol {
+                list-style-type: decimal;
+                list-style-position: inside;
+                color: white;
+            }
+
+            .lup_body_container .module_box ul {
+                list-style-type: disc;
+                list-style-position: inside;
+                color: white;
+            }
+
+            .lup_body_container .module_box ol li, .lup_body_container .module_box ul li {
+                margin-bottom: 10px;
+            }
+
+            .lup_body_container .module_box button.button-primary {
+                border-radius: 9999px; 
+                padding: 12px 20px; 
+                background-color: black; 
+                color: #a3e635; 
+                border: none;
+                cursor: pointer; 
+            }
+
+            .lup_body_container .module_box button.button-primary:hover {
+                background-color: #a3e635; 
+                color: black;
+            }
+
+
+        </style>
+
+
     </head>
 
 
@@ -17,142 +147,128 @@
     <body>
 
 
-        <div class="mx-auto my-5 w-3/5 rounded-lg bg-black text-lime-300 px-7 py-5">
+        <div class="lup_heading_container">
+            
+  
+            <h1>
+                <a href="{{ url('/laravel-user-proxy') }}">
+                    Laravel User Proxy
+                </a>
+            </h1>
 
-            <h1 class="text-3xl mb-5"><a href="{{ url('/laravel-user-proxy') }}">Laravel User Proxy</a></h1>
-
-            <p class="text-white">
+            <p>
                 This package allows you to test your app with a proxy user. There are 2 ways to use this package: 
-                <strong>Quick Proxy Mode</strong> and <strong>Full Proxy Mode</strong>. 
+                <strong>Quick Proxy Mode</strong> and <strong>Full Proxy Mode</strong>.
             </p>
-            <p class="text-white">
-                In Quick Proxy Mode, you set a key and a value for a session variable that will serve as your proxy user.  For example, you might set a key of "username" and a value of "csmith".  This will allow you to test your app as if you are the user with the username "csmith". 
+
+            <p>
+                In Quick Proxy Mode, you set a key and a value for a session variable that will serve as your proxy user. 
+                For example, you might set a key of "username" and a value of "csmith". 
+                This will allow you to test your app as if you are the user with the username "csmith".
             </p>
-            <p class="text-white">
-                In Full Proxy Mode, you search for a user by entering their userPrincipalName (as it would appear in Entra / Azure AD).  You can then view the user's information from Microsoft Entra (Azure AD).  If you want to proxy as that user, you can click the "Enter Full Proxy Mode as the Above User" button.  This will save your "real" user information and change your ms:user information to that of the user you selected to proxy.
+
+            <p>
+                In Full Proxy Mode, you search for a user by entering their userPrincipalName (as it would appear in Entra / Azure AD). 
+                You can then view the user's information from Microsoft Entra (Azure AD). 
+                If you want to proxy as that user, you can click the "Enter Full Proxy Mode as the Above User" button. 
+                This will save your "real" user information and change your ms:user information to that of the user you selected to proxy.
             </p>
-            <p class="text-white">
+
+            <p>
                 For full instructions on using each proxy mode, see the settings for 
-                <a href="{{ url('/laravel-user-proxy/console-quick-proxy') }}" class="text-lime-300 underline">Quick Proxy Mode</a> 
+                <a href="{{ url('/laravel-user-proxy/console-quick-proxy') }}">
+                    Quick Proxy Mode
+                </a> 
                 and 
-                <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" class="text-lime-300 underline">Full Proxy Mode</a>.
+                <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}">
+                    Full Proxy Mode
+                </a>.
             </p>
 
         </div>
 
 
 
-        <div class="mx-auto mb-20 w-3/5 rounded-lg border border-black p-5">
 
-            <div class="bg-slate-200 p-5 m-5 rounded">
-                <h2 class="mb-5">Proxy Mode</h2>
+        <div class="lup_body_container">
 
-                <div class="flex items-center justify-between space-x-1 mb-5">
-                    <div class="w-1/4">Currently In Full Proxy Mode?</div>
-                    <div class="w-1/10 font-bold">
+
+
+                <div class="module_box">
+                <h2>Proxy Mode</h2>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 20px;">
+                    <div style="width: 25%;">Currently In Full Proxy Mode?</div>
+                    <div style="width: 10%; font-weight: bold;">
                         {{ session('full_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                     </div>
-                    <div class="w-1/4">
+                    <div style="width: 25%;">
                         <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" 
-                        class="px-5 py-2 rounded-full bg-lime-500 text-black font-bold hover:bg-lime-400 block text-center">
+                            style="padding: 10px 20px; border-radius: 9999px; background-color: #84cc16; 
+                            color: black; font-weight: bold; display: block; text-align: center; 
+                            text-decoration: none;">
                             Full Proxy Settings
                         </a>
                     </div>
-                    <div class="w-1/4">
+                    <div style="width: 25%;">
                         @if (session('full_proxy_mode') == true)
                             <a href="{{ url('/laravel-user-proxy/exit-full-proxy-mode') }}" 
-                            class="px-5 py-2 rounded-full bg-black text-lime-300 font-bold hover:bg-gray-800 block text-center">
+                                style="padding: 10px 20px; border-radius: 9999px; background-color: black; 
+                                color: #a3e635; font-weight: bold; display: block; text-align: center; 
+                                text-decoration: none;">
                                 Exit Full Proxy Mode
                             </a>
                         @endif
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between space-x-1 mb-5">
-                    <div class="w-1/4">Currently In Quick Proxy Mode?</div>
-                    <div class="w-1/10 font-bold">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 20px;">
+                    <div style="width: 25%;">Currently In Quick Proxy Mode?</div>
+                    <div style="width: 10%; font-weight: bold;">
                         {{ session('quick_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                     </div>
-                    <div class="w-1/4">
+                    <div style="width: 25%;">
                         <a href="{{ url('/laravel-user-proxy/console-quick-proxy') }}" 
-                        class="px-5 py-2 rounded-full bg-lime-500 text-black font-bold hover:bg-lime-400 block text-center">
+                            style="padding: 10px 20px; border-radius: 9999px; background-color: #84cc16; 
+                            color: black; font-weight: bold; display: block; text-align: center; 
+                            text-decoration: none;">
                             Quick Proxy Settings
                         </a>
                     </div>
-                    <div class="w-1/4">
+                    <div style="width: 25%;">
                         @if (session('quick_proxy_mode') == true)
                             <a href="{{ url('/laravel-user-proxy/exit-quick-proxy-mode') }}" 
-                            class="px-5 py-2 rounded-full bg-black text-lime-300 font-bold hover:bg-gray-800 block text-center">
+                                style="padding: 10px 20px; border-radius: 9999px; background-color: black; 
+                                color: #a3e635; font-weight: bold; display: block; text-align: center; 
+                                text-decoration: none;">
                                 Exit Quick Proxy Mode
                             </a>
                         @endif
                     </div>
                 </div>
+
             </div>
 
 
 
 
             @if (session('quick_proxy_mode'))
-                <div class="bg-slate-200 p-5 m-5 rounded">
+                <div class="module_box">
+
                     <h2>Quick Proxy Session Variables</h2>
 
-                    quick_proxy_session_key:  <span class="font-bold">{{ session('quick_proxy_session_key') }}</span><br/>
-                    quick_proxy_session_value:  <span class="font-bold">{{ session('quick_proxy_session_value') }}</span><br/>
-                    {{ session('quick_proxy_session_key') }}:  <span class="font-bold">{{ session('quick_proxy_session_value') }}</span>
+                    quick_proxy_session_key:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key') }}</span><br/>
+                    quick_proxy_session_value:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value') }}</span><br/>
+                    {{ session('quick_proxy_session_key') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value') }}</span>
                 </div>
             @endif
 
 
             
 
-            <div class="bg-slate-200 p-5 m-5 rounded">
-               <h2>MS User Individual Session Variables</h2>
-
-                ms:username:  <span class="font-bold">{{ session('ms:username') }}</span><br/>
-                ms:email:  <span class="font-bold">{{ session('ms:email') }}</span><br/>
-                ms:principalName:  <span class="font-bold">{{ session('ms:principalName') }}</span><br/>
-                ms:id:  <span class="font-bold">{{ session('ms:id') }}</span><br/>
-            </div>
-
-
-
-
-            <div class="bg-slate-200 p-5 m-5 rounded">
-               <h2>MS User Object (ms:user)</h2>
-
-                @foreach (session('ms:user') as $key => $value)
-
-                    @if ($key == 'token')
-
-                        ms:user:{{ $key }}: <span class="font-bold break-all text-xs">{{ $value }}</span><br/>
-
-                    @else
-
-                        ms:user:{{ $key }}: <span class="font-bold break-all">{{ $value }}</span><br/>
-
-                    @endif
-
-                @endforeach
-            </div>
-
-
-
-
-            <div class="bg-slate-200 p-5 m-5 rounded">
-                <h2>Real MS User (these values will be blank unless you are in full proxy mode)</h2>
-
-                real_ms_bannerUsername: <span class="font-bold">{{ session('real_ms_username') }}</span><br/>
-                real_ms_id:  <span class="font-bold">{{ session('real_ms_id') }}</span><br/>
-                real_ms_name:  <span class="font-bold">{{ session('real_ms_name') }}</span><br/>
-                real_ms_email:  <span class="font-bold">{{ session('real_ms_email') }}</span><br/>
-                real_ms_principalName:  <span class="font-bold">{{ session('real_ms_principalName') }}</span>
-            </div>
-
-
-
-
-            <div class="bg-slate-200 p-5 m-5 rounded">
+            <div class="module_box">
+                
+                <h2>Session Variables</h2>
 
                 <?php dump(session()->all()); ?>
 
