@@ -10,7 +10,7 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-           <style>
+        <style>
             
             .lup_heading_container {
                 margin-left: auto; 
@@ -105,6 +105,26 @@
                 padding: 20px; 
                 margin: 20px; 
                 border-radius: 6px;
+            }
+
+            .lup_body_container .module_box a {
+                color: #007A00; 
+                text-decoration: underline;
+            }
+
+            .lup_body_container .module_box a:hover {
+                color: #006600; 
+                text-decoration: none;
+            }
+
+            .lup_body_container .module_box p a {
+                color: #007A00; 
+                text-decoration: underline;
+            }
+
+            .lup_body_container .module_box p a:hover {
+                color: #006600; 
+                text-decoration: none;
             }
 
             .lup_body_container .module_box ol {
