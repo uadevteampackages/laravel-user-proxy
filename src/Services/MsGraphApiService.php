@@ -19,9 +19,9 @@ class MsGraphApiService
     public function __construct()
     {
         // Set the necessary credentials from environment variables
-        $this->tenant_id = env('LUP_AZURE_TENANT_ID');
-        $this->client_id = env('LUP_AZURE_CLIENT_ID');
-        $this->client_secret = env('LUP_AZURE_CLIENT_SECRET');
+        $this->tenant_id = env('AZURE_TENANT_ID');
+        $this->client_id = env('AZURE_CLIENT_ID');
+        $this->client_secret = env('AZURE_CLIENT_SECRET');
 
         // Initialize GuzzleHttp client
         $this->client = new Client([
