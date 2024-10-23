@@ -107,6 +107,10 @@
                 border-radius: 6px;
             }
 
+            .lup_body_container .module_box p {
+                margin-bottom: 15px;
+            }
+
             .lup_body_container .module_box a {
                 color: #007A00; 
                 text-decoration: underline;
