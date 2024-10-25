@@ -1,6 +1,10 @@
-@if ((in_array(env('APP_ENV'), ['dev', 'local', 'test'])) && 
-     (session('full_proxy_mode') == true || session('quick_proxy_mode') == true))
-    
+
+@php $show_laravel_user_proxy_bar = new \Uadevteampackages\LaravelUserProxy\Services\ShowHideLupService; 
+     $show_laravel_user_proxy_bar = $show_laravel_user_proxy_bar->handle();
+@endphp
+
+@if ($show_laravel_user_proxy_bar == true)
+
     <div>
         <div style="background-color: #a3e635; padding: 20px;">
             <div style="width: 80%; margin-left: auto; margin-right: auto;">

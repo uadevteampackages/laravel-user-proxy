@@ -13,6 +13,8 @@ class LaravelUserProxyServiceProvider extends ServiceProvider
         // Register the package views
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-user-proxy');
 
+        $this->app['router']->aliasMiddleware('laravel-user-proxy', \Uadevteampackages\LaravelUserProxy\Http\Middleware\LaravelUserProxyMiddleware::class);
+
         // Load routes from your package
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
 

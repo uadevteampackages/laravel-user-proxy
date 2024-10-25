@@ -227,6 +227,16 @@
             </div>
 
 
+
+            <div class="module_box">
+                
+                <h2>Session Variables</h2>
+
+                <?php dump(session()->all()); ?>
+
+            </div>
+
+
                 
         </div>
        

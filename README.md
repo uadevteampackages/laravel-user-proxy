@@ -13,6 +13,20 @@ For full instructions on using each proxy mode, see the settings pages for [Quic
 
 
 
+## ENV VARIABLES
+
+You will need to add the following environment variables in your Laravel application's .env file:
+
+
+```
+
+LUP_ALLOWED_USERNAMES=user1,user2,user3
+
+```
+
+The value of LUP_ALLOWED_USERNAMES should be a comma-separated list of usernames of the users who should be allowed to access the Laravel User Proxy settings.
+
+
 ## Full proxy mode instructions
 
 - Search for a user by entering their userPrincipalName (mybamausername@ua.edu).  

@@ -225,36 +225,46 @@
     
             <div class="module_box">
                 <h2>Search for User to Proxy</h2>
-                    <form method="post" action="{{ url('/laravel-user-proxy/search-for-user') }}">
-                        @csrf
-                        <div style="margin-bottom: 20px;">
-                            <label for="user_principal_name" style="margin-right: 12px;">
-                                Enter a userPrincipalName (mybamausername@ua.edu) to view the MS Azure AD (Entra) information for a specific user:
-                            </label>
-                            <input type="text" name="user_principal_name" 
-                                style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; 
-                                border-radius: 4px; border: 1px solid #d1d5db; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
-                                transition: border-color 0.2s ease, box-shadow 0.2s ease;"
-                                onfocus="this.style.borderColor='#84cc16'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 22, 0.3)';"
-                                onblur="this.style.borderColor='#d1d5db'; this.style.boxShadow='';">
+                <form method="post" action="{{ url('/laravel-user-proxy/search-for-user') }}">
+                    @csrf
+                    <div style="margin-bottom: 20px;">
+                        <label for="user_principal_name" style="margin-right: 12px;">
+                            Enter a userPrincipalName (mybamausername@ua.edu) to view the MS Azure AD (Entra) information for a specific user:
+                        </label>
+                        <input type="text" name="user_principal_name" 
+                            style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; 
+                            border-radius: 4px; border: 1px solid #d1d5db; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+                            transition: border-color 0.2s ease, box-shadow 0.2s ease;"
+                            onfocus="this.style.borderColor='#84cc16'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 22, 0.3)';"
+                            onblur="this.style.borderColor='#d1d5db'; this.style.boxShadow='';">
+                    </div>
+                    @error('user_principal_name')
+                        <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 4px; 
+                            margin-bottom: 20px; width: 66.67%;">
+                            {{ $message }}
                         </div>
-                        @error('user_principal_name')
-                            <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 4px; 
-                                margin-bottom: 20px; width: 66.67%;">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                        @if(session('warning'))
-                            <div style="background-color: #fbbf24; color: black; padding: 12px; border-radius: 4px; 
-                                margin-bottom: 20px; width: 66.67%;">
-                                {{ session('warning') }}
-                            </div>
-                        @endif
-                            
-                        <button type="submit" class="button-primary" style="margin-bottom:20px;">
-                            Search for User
-                        </button>
-                    </form>
+                    @enderror
+                    @if(session('warning'))
+                        <div style="background-color: #fbbf24; color: black; padding: 12px; border-radius: 4px; 
+                            margin-bottom: 20px; width: 66.67%;">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+                        
+                    <button type="submit" class="button-primary" style="margin-bottom:20px;">
+                        Search for User
+                    </button>
+                </form>
+            </div>
+
+
+
+            <div class="module_box">
+                
+                <h2>Session Variables</h2>
+
+                <?php dump(session()->all()); ?>
+
             </div>
 
             

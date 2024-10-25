@@ -225,38 +225,47 @@
 
             <div class="module_box">
                 <h2>Quick Proxy</h2>
-                    <form method="post" action="{{ url('/laravel-user-proxy/enter-quick-proxy-mode') }}">
-                        @csrf
+                <form method="post" action="{{ url('/laravel-user-proxy/enter-quick-proxy-mode') }}">
+                    @csrf
 
-                        <div style="margin-bottom: 20px;">
-                            <label for="quick_proxy_session_key" style="margin-right: 12px;">
-                                Enter a key for your quick proxy session variable:
-                            </label>
-                            <input type="text" 
-                                name="quick_proxy_session_key" 
-                                style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; 
-                                border-radius: 4px; border: 1px solid #d1d5db;">
-                        </div>
-                        @error('quick_proxy_session_key')
-                            <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 8px; margin-bottom: 20px; width: 66.6666%;">{{ $message }}</div>
-                        @enderror
-
-
-                        <div style="margin-bottom: 20px;">
-                            <label for="quick_proxy_session_value" style="margin-right: 12px;">
-                                Enter a value for your quick proxy session variable:
-                            </label>
-                            <input type="text" name="quick_proxy_session_value" style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; border-radius: 4px; border: 1px solid #d1d5db;">
-                        </div>
-                        @error('quick_proxy_session_value')
-                            <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 8px; margin-bottom: 20px; width: 66.6666%;">{{ $message }}</div>
-                        @enderror
+                    <div style="margin-bottom: 20px;">
+                        <label for="quick_proxy_session_key" style="margin-right: 12px;">
+                            Enter a key for your quick proxy session variable:
+                        </label>
+                        <input type="text" 
+                            name="quick_proxy_session_key" 
+                            style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; 
+                            border-radius: 4px; border: 1px solid #d1d5db;">
+                    </div>
+                    @error('quick_proxy_session_key')
+                        <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 8px; margin-bottom: 20px; width: 66.6666%;">{{ $message }}</div>
+                    @enderror
 
 
-                        <button type="submit" class="button-primary" style="margin-bottom:20px;">
-                            Enter Quick Proxy Mode with the Above Session Variable
-                        </button>
-                    </form>
+                    <div style="margin-bottom: 20px;">
+                        <label for="quick_proxy_session_value" style="margin-right: 12px;">
+                            Enter a value for your quick proxy session variable:
+                        </label>
+                        <input type="text" name="quick_proxy_session_value" style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; border-radius: 4px; border: 1px solid #d1d5db;">
+                    </div>
+                    @error('quick_proxy_session_value')
+                        <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 8px; margin-bottom: 20px; width: 66.6666%;">{{ $message }}</div>
+                    @enderror
+
+
+                    <button type="submit" class="button-primary" style="margin-bottom:20px;">
+                        Enter Quick Proxy Mode with the Above Session Variable
+                    </button>
+                </form>
+            </div>
+
+
+            <div class="module_box">
+                
+                <h2>Session Variables</h2>
+
+                <?php dump(session()->all()); ?>
+
             </div>
 
 
