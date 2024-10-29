@@ -155,6 +155,7 @@
                 color: #84cc16; 
                 border: none;
                 cursor: pointer; 
+                font-weight: bold;
             }
 
             .lup_body_container .module_box button.button-primary:hover {
