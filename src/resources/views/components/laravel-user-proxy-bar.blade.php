@@ -3,6 +3,9 @@
     $show_laravel_user_proxy_bar = $show_laravel_user_proxy_bar->handle();
 @endphp
 
+
+
+
 @if ($show_laravel_user_proxy_bar == true)
 
 

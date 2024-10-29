@@ -33,16 +33,30 @@ class ShowHideLupService
     public function checkUser()
     {
 
+
         $lup_allowed_usernames = explode(',', env('LUP_ALLOWED_USERNAMES', ''));
         $lup_allowed_usernames = array_map('trim', $lup_allowed_usernames);
 
-        if (session('full_proxy_mode') == true || session('quick_proxy_mode') == true) {
+
+
+        if (session('full_proxy_mode') == true) {
 
             $real_ms_username = session('real_ms_username');
             if (in_array($real_ms_username, $lup_allowed_usernames)) {
                 return true;
             }
         } 
+
+
+        elseif (session('quick_proxy_mode') == true) {
+
+            $username = session('ms:username');
+            if (in_array($username, $lup_allowed_usernames)) {
+                return true;
+
+            }
+        }
+
         
         elseif (session('full_proxy_mode') == false && session('quick_proxy_mode') == false) {
             
