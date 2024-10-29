@@ -26,6 +26,9 @@ class QuickProxyController extends Controller
         session()->put('full_proxy_mode', false);
         session()->forget('full_proxy_mode');
 
+        // if we are in quick proxy mode, we don't need to exit it, but we do need to forget the quick proxy session variable
+        $this->forgetQuickProxySessionVariable();
+
         // enter quick proxy mode
         session()->put('quick_proxy_mode', true);
 
@@ -51,14 +54,21 @@ class QuickProxyController extends Controller
         session()->put('quick_proxy_mode', false);
         session()->forget('quick_proxy_mode');
 
+        $this->forgetQuickProxySessionVariable();
+        
+        return redirect()->to('/laravel-user-proxy');
+    }
+
+
+
+    public function forgetQuickProxySessionVariable()
+    {
         // remove the quick proxy session key and value and the session variable that equals the quick proxy session key
         $quick_proxy_session_key = session()->get('quick_proxy_session_key');
 
         session()->forget($quick_proxy_session_key);
         session()->forget('quick_proxy_session_key');
         session()->forget('quick_proxy_session_value');
-
-        return redirect()->to('/laravel-user-proxy');
     }
     
 

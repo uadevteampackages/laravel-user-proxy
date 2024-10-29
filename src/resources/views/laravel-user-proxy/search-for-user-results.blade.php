@@ -20,7 +20,7 @@
                 width: 60%; 
                 border-radius: 8px; 
                 background-color: black; 
-                color: #a3e635; 
+                color: #84cc16; 
                 padding-left: 28px; 
                 padding-right: 28px; 
                 padding-top: 20px; 
@@ -34,7 +34,7 @@
             }
 
             .lup_heading_container h1 a {
-                color: #a3e635; 
+                color: #84cc16; 
                 text-decoration: none;
             }
 
@@ -50,12 +50,12 @@
             }
 
             .lup_heading_container a {
-                color: #a3e635; 
+                color: #84cc16; 
                 text-decoration: underline;
             }
 
             .lup_heading_container p a {
-                color: #a3e635; 
+                color: #84cc16; 
                 text-decoration: underline;
             }
 
@@ -111,22 +111,24 @@
             }
 
             .lup_body_container .module_box a {
-                color: #007A00; 
-                text-decoration: underline;
+                color: #22880e; 
+                text-decoration: underline; 
+                font-weight: bold;
             }
 
             .lup_body_container .module_box a:hover {
-                color: #006600; 
-                text-decoration: none;
+                color: #22880e; 
+                text-decoration: none; 
+                font-weight: bold;
             }
 
             .lup_body_container .module_box p a {
-                color: #007A00; 
+                color: #22880e; 
                 text-decoration: underline;
             }
 
             .lup_body_container .module_box p a:hover {
-                color: #006600; 
+                color: #22880e; 
                 text-decoration: none;
             }
 
@@ -150,13 +152,13 @@
                 border-radius: 9999px; 
                 padding: 12px 20px; 
                 background-color: black; 
-                color: #a3e635; 
+                color: #84cc16; 
                 border: none;
                 cursor: pointer; 
             }
 
             .lup_body_container .module_box button.button-primary:hover {
-                background-color: #a3e635; 
+                background-color: #84cc16; 
                 color: black;
             }
 
@@ -193,7 +195,12 @@
 
 
             <div class="module_box">
-                <a href="{{ url('/laravel-user-proxy') }}">⬅️ Return to Laravel User Proxy Home</a>
+                <div style="margin-top:20px; margin-bottom:25px;">
+                    <a href="{{ url('/laravel-user-proxy') }}">⬅️  Return to Laravel User Proxy Home</a>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <a href="{{ url('/') }}">⬅️  Return to App Home Page</a>
+                </div>
             </div>
 
 
@@ -218,7 +225,7 @@
                         </button>
 
                         <div style="margin-top:10px;">
-                            <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" style="display: inline-block; border-radius: 9999px; padding: 12px 20px; background-color: black; color: #a3e635; text-decoration: none;">
+                            <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" style="display: inline-block; border-radius: 9999px; padding: 12px 20px; background-color: black; color: #84cc16; text-decoration: none;">
                                 Search for Another User
                             </a>
                         </div>

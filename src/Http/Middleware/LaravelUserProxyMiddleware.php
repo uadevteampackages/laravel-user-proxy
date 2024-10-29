@@ -20,11 +20,21 @@ class LaravelUserProxyMiddleware
         $lup_allowed_usernames = array_map('trim', $lup_allowed_usernames);
 
 
-        if (session('full_proxy_mode') == true || session('quick_proxy_mode') == true) {
+        if (session('full_proxy_mode') == true) {
 
             $real_ms_username = session('real_ms_username');
             if (!in_array($real_ms_username, $lup_allowed_usernames)) {
                 return redirect('unauthorized');
+            }
+        }
+
+
+        elseif (session('quick_proxy_mode') == true) {
+
+            $username = session('ms:username');
+            if (!in_array($username, $lup_allowed_usernames)) {
+                return redirect('unauthorized');
+
             }
         }
 
