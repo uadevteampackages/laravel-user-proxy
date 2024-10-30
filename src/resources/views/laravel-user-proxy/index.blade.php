@@ -297,9 +297,36 @@
 
                     <h2>Quick Proxy Session Variables</h2>
 
-                    quick_proxy_session_key:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key') }}</span><br/>
-                    quick_proxy_session_value:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value') }}</span><br/>
-                    {{ session('quick_proxy_session_key') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value') }}</span>
+                    <div style="margin-top:25px; margin-bottom:15px;">
+                        quick_proxy_session_key_1:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_1') }}</span><br/>
+                        quick_proxy_session_value_1:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span><br/>
+                        {{ session('quick_proxy_session_key_1') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span>
+                    </div>
+
+                    <div style="margin-bottom:15px;">
+                        quick_proxy_session_key_2:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_2') }}</span><br/>
+                        quick_proxy_session_value_2:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span><br/>
+                        {{ session('quick_proxy_session_key_2') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span>
+                    </div>
+
+                    <div style="margin-bottom:15px;">
+                        quick_proxy_session_key_3:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_3') }}</span><br/>
+                        quick_proxy_session_value_3:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span><br/>
+                        {{ session('quick_proxy_session_key_3') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span>
+                    </div>
+
+                    <div style="margin-bottom:15px;">
+                        quick_proxy_session_key_4:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_4') }}</span><br/>
+                        quick_proxy_session_value_4:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span><br/>
+                        {{ session('quick_proxy_session_key_4') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span>
+                    </div>
+
+                    <div style="margin-bottom:15px;">
+                        quick_proxy_session_key_5:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_5') }}</span><br/>
+                        quick_proxy_session_value_5:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span><br/>
+                        {{ session('quick_proxy_session_key_5') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span>
+                    </div>
+
                 </div>
             @endif
 

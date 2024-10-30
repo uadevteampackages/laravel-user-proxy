@@ -8,44 +8,54 @@ use App\Http\Controllers\Controller;
 
 class QuickProxyController extends Controller
 {
-
-    
     public function consoleQuickProxy()
     {
         Log::info('The consoleQuickProxy method was called from the QuickProxyController.');
         return view('laravel-user-proxy::laravel-user-proxy.console-quick-proxy');
     }
 
-
-
     public function enterQuickProxyMode(Request $request)
     {
         Log::info('The enterQuickProxyMode method was called from the QuickProxyController.');
 
-        // exit full proxy mode if it is active (we don't have to check whether it's active just delete the session variable)
+        // Exit full proxy mode if it is active.
         session()->put('full_proxy_mode', false);
         session()->forget('full_proxy_mode');
 
-        // if we are in quick proxy mode, we don't need to exit it, but we do need to forget the quick proxy session variable
-        $this->forgetQuickProxySessionVariable();
+        // Clear previous quick proxy session variables.
+        $this->forgetQuickProxySessionVariables();
 
-        // enter quick proxy mode
+        // Enter quick proxy mode.
         session()->put('quick_proxy_mode', true);
 
+        // Validate all key-value pairs.
         $data = $request->validate([
-            'quick_proxy_session_key' => 'required',
-            'quick_proxy_session_value' => 'required',
+            'quick_proxy_session_key_1' => 'required|string',
+            'quick_proxy_session_value_1' => 'required|string',
+            'quick_proxy_session_key_2' => 'nullable|string',
+            'quick_proxy_session_value_2' => 'nullable|string',
+            'quick_proxy_session_key_3' => 'nullable|string',
+            'quick_proxy_session_value_3' => 'nullable|string',
+            'quick_proxy_session_key_4' => 'nullable|string',
+            'quick_proxy_session_value_4' => 'nullable|string',
+            'quick_proxy_session_key_5' => 'nullable|string',
+            'quick_proxy_session_value_5' => 'nullable|string',
         ]);
 
-        session()->put('quick_proxy_session_key', $data['quick_proxy_session_key']);
-        session()->put('quick_proxy_session_value', $data['quick_proxy_session_value']);
+        // Store each valid key-value pair in the session.
+        for ($i = 1; $i <= 5; $i++) {
+            $key = $data["quick_proxy_session_key_$i"] ?? null;
+            $value = $data["quick_proxy_session_value_$i"] ?? null;
 
-        session()->put($data['quick_proxy_session_key'], $data['quick_proxy_session_value']);
+            if ($key && $value) {
+                session()->put($key, $value); // Store the key-value in session.
+                session()->put("quick_proxy_session_key_$i", $key);
+                session()->put("quick_proxy_session_value_$i", $value);
+            }
+        }
 
         return redirect()->to('/laravel-user-proxy');
     }
-
-
 
     public function exitQuickProxyMode()
     {
@@ -54,22 +64,23 @@ class QuickProxyController extends Controller
         session()->put('quick_proxy_mode', false);
         session()->forget('quick_proxy_mode');
 
-        $this->forgetQuickProxySessionVariable();
-        
+        $this->forgetQuickProxySessionVariables();
+
         return redirect()->to('/laravel-user-proxy');
     }
 
-
-
-    public function forgetQuickProxySessionVariable()
+    public function forgetQuickProxySessionVariables()
     {
-        // remove the quick proxy session key and value and the session variable that equals the quick proxy session key
-        $quick_proxy_session_key = session()->get('quick_proxy_session_key');
+        // Remove all session keys and values related to quick proxy mode.
+        for ($i = 1; $i <= 5; $i++) {
+            $key = session()->get("quick_proxy_session_key_$i");
 
-        session()->forget($quick_proxy_session_key);
-        session()->forget('quick_proxy_session_key');
-        session()->forget('quick_proxy_session_value');
+            if ($key) {
+                session()->forget($key); // Forget the dynamic session key.
+            }
+
+            session()->forget("quick_proxy_session_key_$i");
+            session()->forget("quick_proxy_session_value_$i");
+        }
     }
-    
-
 }
