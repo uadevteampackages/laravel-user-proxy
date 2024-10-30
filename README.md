@@ -5,7 +5,7 @@
 
 This package allows you to test your app with a proxy user. There are 2 ways to use this package: **Quick Proxy Mode** and **Full Proxy Mode**.
 
-In Quick Proxy Mode, you set a key and a value for a session variable that will serve as your proxy user. For example, you might set a key of "username" and a value of "csmith". This will allow you to test your app as if you are the user with the username "csmith".
+In Quick Proxy Mode, you can set key-value pairs that will serve as quick proxy session variables that can be used to simulate a proxy user.  You may only need one key-value pair, such as "username" as the key and "csmith" as the value, but you can create up to 5 key-value pairs.
 
 In Full Proxy Mode, you search for a user by entering their userPrincipalName (as it would appear in Entra / Azure AD). You can then view the user's information from Microsoft Entra (Azure AD). If you want to proxy as that user, you can click the "Enter Full Proxy Mode as the Above User" button. This will save your "real" user information and change your `ms:user` information to that of the user you selected to proxy.
 
@@ -75,9 +75,9 @@ Even after installation, the Laravel User Proxy package will only be active and 
 
 ## Quick proxy mode instructions
 
-- Enter a key and value for your proxy session variable.  
-- For example, you could enter "username" as the key and "csmith" as the value.  
-- When you are finished testing as the quick proxy user, click the "Exit Quick Proxy Mode" button. This will clear out the session variables related to Quick Proxy Mode. Unlike Full Proxy Mode, you will not be logged out of the application.
+- Enter up to 5 key-value pairs that will serve as quick proxy session variables.
+- These keys and values can be whatever you need them to be for your testing purposes.
+- When you are finished testing in quick proxy mode, click the "Exit Quick Proxy Mode" button.  This will clear out the session variables related to Quick Proxy Mode.  Unlike Full Proxy Mode, you will not be logged out of the application.
 
 
 

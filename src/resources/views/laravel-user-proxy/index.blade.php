@@ -189,9 +189,7 @@
             </p>
 
             <p>
-                In Quick Proxy Mode, you set a key and a value for a session variable that will serve as your proxy user. 
-                For example, you might set a key of "username" and a value of "csmith". 
-                This will allow you to test your app as if you are the user with the username "csmith".
+                In Quick Proxy Mode, you can set key-value pairs that will serve as quick proxy session variables that can be used to simulate a proxy user.  You may only need one key-value pair, such as "username" as the key and "csmith" as the value, but you can create up to 5 key-value pairs.
             </p>
 
             <p>
@@ -297,34 +295,44 @@
 
                     <h2>Quick Proxy Session Variables</h2>
 
-                    <div style="margin-top:25px; margin-bottom:15px;">
+                    <div style="margin-top:25px; margin-bottom:25px;">
                         quick_proxy_session_key_1:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_1') }}</span><br/>
                         quick_proxy_session_value_1:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span><br/>
-                        {{ session('quick_proxy_session_key_1') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span>
+                        @if (session('quick_proxy_session_key_1'))
+                            {{ session('quick_proxy_session_key_1') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span>
+                        @endif
                     </div>
 
-                    <div style="margin-bottom:15px;">
+                    <div style="margin-bottom:25px;">
                         quick_proxy_session_key_2:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_2') }}</span><br/>
                         quick_proxy_session_value_2:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span><br/>
-                        {{ session('quick_proxy_session_key_2') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span>
+                        @if (session('quick_proxy_session_key_2'))
+                            {{ session('quick_proxy_session_key_2') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span>
+                        @endif
                     </div>
 
-                    <div style="margin-bottom:15px;">
+                    <div style="margin-bottom:25px;">
                         quick_proxy_session_key_3:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_3') }}</span><br/>
                         quick_proxy_session_value_3:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span><br/>
-                        {{ session('quick_proxy_session_key_3') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span>
+                        @if (session('quick_proxy_session_key_3'))
+                            {{ session('quick_proxy_session_key_3') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span>
+                        @endif
                     </div>
 
-                    <div style="margin-bottom:15px;">
+                    <div style="margin-bottom:25px;">
                         quick_proxy_session_key_4:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_4') }}</span><br/>
                         quick_proxy_session_value_4:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span><br/>
-                        {{ session('quick_proxy_session_key_4') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span>
+                        @if (session('quick_proxy_session_key_4'))
+                            {{ session('quick_proxy_session_key_4') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span>
+                        @endif
                     </div>
 
-                    <div style="margin-bottom:15px;">
+                    <div style="margin-bottom:25px;">
                         quick_proxy_session_key_5:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_5') }}</span><br/>
                         quick_proxy_session_value_5:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span><br/>
-                        {{ session('quick_proxy_session_key_5') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span>
+                        @if (session('quick_proxy_session_key_5'))
+                            {{ session('quick_proxy_session_key_5') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span>
+                        @endif
                     </div>
 
                 </div>
