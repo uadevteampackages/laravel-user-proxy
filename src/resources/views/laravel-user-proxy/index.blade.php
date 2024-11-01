@@ -81,6 +81,7 @@
 
 
 
+
             .lup_body_container {
                 margin-left: auto;        
                 margin-right: auto;       
@@ -154,7 +155,7 @@
                 background-color: black; 
                 color: #84cc16; 
                 border: none;
-                cursor: pointer;
+                cursor: pointer; 
                 font-weight: bold;
             }
 
@@ -166,7 +167,6 @@
 
         </style>
 
-
     </head>
 
 
@@ -175,43 +175,20 @@
 
 
         <div class="lup_heading_container">
-            
-  
-            <h1>
-                <a href="{{ url('/laravel-user-proxy') }}">
-                    Laravel User Proxy
-                </a>
-            </h1>
 
-            <p>
-                This package allows you to test your app with a proxy user. There are 2 ways to use this package: 
-                <strong>Quick Proxy Mode</strong> and <strong>Full Proxy Mode</strong>.
-            </p>
+            <h1><a href="{{ url('/laravel-user-proxy') }}">Laravel User Proxy</a></h1>
 
-            <p>
-                In Quick Proxy Mode, you can set key-value pairs that will serve as quick proxy session variables that can be used to simulate a proxy user.  You may only need one key-value pair, such as "username" as the key and "csmith" as the value, but you can create up to 5 key-value pairs.
-            </p>
+            <p>This package allows you to test your app with a proxy user. </p>
 
-            <p>
-                In Full Proxy Mode, you search for a user by entering their userPrincipalName (as it would appear in Entra / Azure AD). 
-                You can then view the user's information from Microsoft Entra (Azure AD). 
-                If you want to proxy as that user, you can click the "Enter Full Proxy Mode as the Above User" button. 
-                This will save your "real" user information and change your ms:user information to that of the user you selected to proxy.
-            </p>
-
-            <p>
-                For full instructions on using each proxy mode, see the settings for 
-                <a href="{{ url('/laravel-user-proxy/console-quick-proxy') }}">
-                    Quick Proxy Mode
-                </a> 
-                and 
-                <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}">
-                    Full Proxy Mode
-                </a>.
-            </p>
-
-
+            <ol>
+                <li>Search for a user by entering their userPrincipalName (mybamausername@ua.edu for faculty/staff, mybamausername@crimson.ua.edu for students).</li>
+                <li>View the user's information from Microsoft Entra (Azure AD).</li>
+                <li>If you have found the right user and would like to test the app as that user, click the "Enter Proxy Mode as the Above User" button.</li>
+                <li>Once you enter proxy mode, you will need to visit the app home page (or other app pages) to access the app as the proxy user would. This is because the routes within the Laravel User Proxy settings do not use your application's middleware by default, so these settings pages most likely will not reflect the proxy user's experience.</li>
+                <li>When you are finished testing as the proxy user, click the "Exit User Proxy Mode" button.  This will clear out all session variables and log you out of the application completely.  At that point, you can start fresh with a new login in non-proxy mode.</li>
+            </ol>
         </div>
+
 
 
 
@@ -219,9 +196,8 @@
         <div class="lup_body_container">
 
 
-
             <div class="module_box">
-                <div style="margin-top:20px; margin-bottom:25px;">
+                <div style="margin-top:20px; margin-bottom:20px;">
                     <a href="{{ url('/') }}">⬅️  Return to App Home Page</a>
                 </div>
             </div>
@@ -233,113 +209,64 @@
                 <h2>Proxy Mode</h2>
 
                 <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 20px;">
-                    <div style="width: 25%;">Currently In Full Proxy Mode?</div>
-                    <div style="width: 10%; font-weight: bold;">
-                        {{ session('full_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
+                    <div style="width: 33.33%;">Currently In Proxy Mode?</div>
+                    <div style="width: 33.33%; font-weight: bold;">
+                        {{ session('proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
                     </div>
-                    <div style="width: 25%;">
-                        <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" 
-                            style="padding: 10px 20px; border-radius: 9999px; background-color: #84cc16; 
-                            color: black; font-weight: bold; display: block; text-align: center; 
-                            text-decoration: none;">
-                            Full Proxy Settings
-                        </a>
-                    </div>
-                    <div style="width: 25%;">
-                        @if (session('full_proxy_mode') == true)
-                            <a href="{{ url('/laravel-user-proxy/exit-full-proxy-mode') }}" 
+                    <div style="width: 33.33%;">
+                        @if (session('proxy_mode') == true)
+                            <a href="{{ url('/laravel-user-proxy/exit-proxy-mode') }}" 
                                 style="padding: 10px 20px; border-radius: 9999px; background-color: black; 
                                 color: #84cc16; font-weight: bold; display: block; text-align: center; 
                                 text-decoration: none;">
-                                Exit Full Proxy Mode
+                                Exit Proxy Mode
                             </a>
                         @endif
                     </div>
                 </div>
 
-                <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 20px;">
-                    <div style="width: 25%;">Currently In Quick Proxy Mode?</div>
-                    <div style="width: 10%; font-weight: bold;">
-                        {{ session('quick_proxy_mode') == true ? '🟢 Yes' : '🔴 No' }}
-                    </div>
-                    <div style="width: 25%;">
-                        <a href="{{ url('/laravel-user-proxy/console-quick-proxy') }}" 
-                            style="padding: 10px 20px; border-radius: 9999px; background-color: #84cc16; 
-                            color: black; font-weight: bold; display: block; text-align: center; 
-                            text-decoration: none;">
-                            Quick Proxy Settings
-                        </a>
-                    </div>
-                    <div style="width: 25%;">
-                        @if (session('quick_proxy_mode') == true)
-                            <a href="{{ url('/laravel-user-proxy/exit-quick-proxy-mode') }}" 
-                                style="padding: 10px 20px; border-radius: 9999px; background-color: black; 
-                                color: #84cc16; font-weight: bold; display: block; text-align: center; 
-                                text-decoration: none;">
-                                Exit Quick Proxy Mode
-                            </a>
-                        @endif
-                    </div>
-                </div>
-
+                <p style="margin-top:30px;">Once you enter proxy mode, you will need to <a href="{{ url('/') }}">visit the app home page</a> (or other app pages) to access the app as the proxy user would.  This is because the routes within the Laravel User Proxy settings do not use your application's middleware by default, so these settings pages most likely will not reflect the proxy user's experience.</p>
             </div>
 
-            
-
-
-
-
-
-            @if (session('quick_proxy_mode'))
-                <div class="module_box">
-
-                    <h2>Quick Proxy Session Variables</h2>
-
-                    <div style="margin-top:25px; margin-bottom:25px;">
-                        quick_proxy_session_key_1:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_1') }}</span><br/>
-                        quick_proxy_session_value_1:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span><br/>
-                        @if (session('quick_proxy_session_key_1'))
-                            {{ session('quick_proxy_session_key_1') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_1') }}</span>
-                        @endif
-                    </div>
-
-                    <div style="margin-bottom:25px;">
-                        quick_proxy_session_key_2:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_2') }}</span><br/>
-                        quick_proxy_session_value_2:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span><br/>
-                        @if (session('quick_proxy_session_key_2'))
-                            {{ session('quick_proxy_session_key_2') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_2') }}</span>
-                        @endif
-                    </div>
-
-                    <div style="margin-bottom:25px;">
-                        quick_proxy_session_key_3:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_3') }}</span><br/>
-                        quick_proxy_session_value_3:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span><br/>
-                        @if (session('quick_proxy_session_key_3'))
-                            {{ session('quick_proxy_session_key_3') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_3') }}</span>
-                        @endif
-                    </div>
-
-                    <div style="margin-bottom:25px;">
-                        quick_proxy_session_key_4:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_4') }}</span><br/>
-                        quick_proxy_session_value_4:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span><br/>
-                        @if (session('quick_proxy_session_key_4'))
-                            {{ session('quick_proxy_session_key_4') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_4') }}</span>
-                        @endif
-                    </div>
-
-                    <div style="margin-bottom:25px;">
-                        quick_proxy_session_key_5:  <span style="font-weight: bold;">{{ session('quick_proxy_session_key_5') }}</span><br/>
-                        quick_proxy_session_value_5:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span><br/>
-                        @if (session('quick_proxy_session_key_5'))
-                            {{ session('quick_proxy_session_key_5') }}:  <span style="font-weight: bold;">{{ session('quick_proxy_session_value_5') }}</span>
-                        @endif
-                    </div>
-
-                </div>
-            @endif
-
 
             
+
+    
+            <div class="module_box">
+                <h2>Search for User to Proxy</h2>
+                <form method="post" action="{{ url('/laravel-user-proxy/search-for-user') }}">
+                    @csrf
+                    <div style="margin-bottom: 20px;">
+                        <label for="user_principal_name" style="margin-right: 12px;">
+                            Enter a userPrincipalName (mybamausername@ua.edu for faculty/staff, mybamausername@crimson.ua.edu for students) to view the MS Azure AD (Entra) information for a specific user:
+                        </label>
+                        <input type="text" name="user_principal_name" 
+                            style="margin-top: 12px; padding: 12px; width: 66.67%; margin-left: auto; margin-right: auto; 
+                            border-radius: 4px; border: 1px solid #d1d5db; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+                            transition: border-color 0.2s ease, box-shadow 0.2s ease;"
+                            onfocus="this.style.borderColor='#84cc16'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 22, 0.3)';"
+                            onblur="this.style.borderColor='#d1d5db'; this.style.boxShadow='';">
+                    </div>
+                    @error('user_principal_name')
+                        <div style="background-color: #dc2626; color: white; padding: 12px; border-radius: 4px; 
+                            margin-bottom: 20px; width: 66.67%;">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    @if(session('warning'))
+                        <div style="background-color: #fbbf24; color: black; padding: 12px; border-radius: 4px; 
+                            margin-bottom: 20px; width: 66.67%;">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+                        
+                    <button type="submit" class="button-primary" style="margin-bottom:20px;">
+                        Search for User
+                    </button>
+                </form>
+            </div>
+
+
 
             <div class="module_box">
                 
@@ -349,15 +276,10 @@
 
             </div>
 
-
-
-
-
+            
 
         </div>
        
-
-
 
 
 

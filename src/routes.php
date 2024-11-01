@@ -2,26 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use Uadevteampackages\LaravelUserProxy\Http\Controllers\ProxyController;
-use Uadevteampackages\LaravelUserProxy\Http\Controllers\FullProxyController;
-use Uadevteampackages\LaravelUserProxy\Http\Controllers\QuickProxyController;
 
 Route::group(['middleware' => ['web', 'laravel-user-proxy']], function () {
 
+        Route::redirect('/lup', '/laravel-user-proxy');
+
         Route::get('/laravel-user-proxy', [ProxyController::class, 'index']);
 
-        Route::get('/laravel-user-proxy/console-full-proxy', [FullProxyController::class, 'consoleFullProxy']);
+        Route::post('/laravel-user-proxy/search-for-user', [ProxyController::class, 'searchForUser']);
 
-        Route::get('/laravel-user-proxy/console-quick-proxy', [QuickProxyController::class, 'consoleQuickProxy']);
+        Route::post('/laravel-user-proxy/enter-proxy-mode', [ProxyController::class, 'enterProxyMode']);
 
-        Route::post('/laravel-user-proxy/search-for-user', [FullProxyController::class, 'searchForUser']);
+        Route::get('/laravel-user-proxy/exit-proxy-mode', [ProxyController::class, 'exitProxyMode']);
 
-        Route::post('/laravel-user-proxy/enter-full-proxy-mode', [FullProxyController::class, 'enterFullProxyMode']);
 
-        Route::get('/laravel-user-proxy/exit-full-proxy-mode', [FullProxyController::class, 'exitFullProxyMode']);
-
-        Route::post('/laravel-user-proxy/enter-quick-proxy-mode', [QuickProxyController::class, 'enterQuickProxyMode']);
-
-        Route::get('/laravel-user-proxy/exit-quick-proxy-mode', [QuickProxyController::class, 'exitQuickProxyMode']);
 
     }
 

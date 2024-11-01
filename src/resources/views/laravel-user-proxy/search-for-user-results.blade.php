@@ -178,13 +178,13 @@
 
             <h1><a href="{{ url('/laravel-user-proxy') }}">Laravel User Proxy</a></h1>
 
-            <p>This package allows you to test your app with a proxy user, using their directory information from Microsoft Entra (Azure AD).</p>
+            <p>This package allows you to test your app with a proxy user. </p>
 
             <ol>
-                <li>Search for a user by entering their userPrincipalName (mybamausername@ua.edu).</li>
+                <li>Search for a user by entering their userPrincipalName (mybamausername@ua.edu for faculty/staff, mybamausername@crimson.ua.edu for students).</li>
                 <li>View the user's information from Microsoft Entra (Azure AD).</li>
-                <li>If you want to proxy as that user, click the "Enter Proxy Mode as the Above User" button.</li>
-                <li>When you are done testing as the proxy user, click the "Exit User Proxy Mode" button.  This will clear out all session variables and log you out of the application completely.  At that point, you can start fresh with a new login in non-proxy mode.</li>
+                <li>If you have found the right user and would like to test the app as that user, click the "Enter Proxy Mode as the Above User" button.</li>
+                <li>When you are finished testing as the proxy user, click the "Exit User Proxy Mode" button.  This will clear out all session variables and log you out of the application completely.  At that point, you can start fresh with a new login in non-proxy mode.</li>
             </ol>
 
         </div>
@@ -196,11 +196,14 @@
 
 
             <div class="module_box">
-                <div style="margin-top:20px; margin-bottom:25px;">
+                <div style="margin-top:20px; margin-bottom:20px;">
                     <a href="{{ url('/laravel-user-proxy') }}">⬅️  Return to Laravel User Proxy Home</a>
                 </div>
                 <div style="margin-bottom:20px;">
                     <a href="{{ url('/') }}">⬅️  Return to App Home Page</a>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <a href="{{ url('/laravel-user-proxy') }}">⬅️  Search for Another User</a>
                 </div>
             </div>
 
@@ -217,19 +220,13 @@
                 <p>surname: <strong>{{ $user_from_entra['surname'] }}</strong></p>
 
                 <div style="margin-top: 20px; margin-bottom: 20px;">
-                    <form method="post" action="{{ url('/laravel-user-proxy/enter-full-proxy-mode') }}">
+                    <form method="post" action="{{ url('/laravel-user-proxy/enter-proxy-mode') }}">
                         @csrf
                         <input type="hidden" name="user_principal_name_to_proxy" value="{{ $user_from_entra['userPrincipalName'] }}">
                         
                         <button type="submit" class="button-primary">
-                            Enter Full Proxy Mode as the Above User
+                            Enter Proxy Mode as the Above User
                         </button>
-
-                        <div style="margin-top:10px;">
-                            <a href="{{ url('/laravel-user-proxy/console-full-proxy') }}" style="display: inline-block; border-radius: 9999px; padding: 12px 20px; background-color: black; color: #84cc16; text-decoration: none;">
-                                Search for Another User
-                            </a>
-                        </div>
                     </form>
                 </div>
             </div>
