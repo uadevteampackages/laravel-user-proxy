@@ -1,7 +1,7 @@
 {
     "name": "uadevteampackages/laravel-user-proxy",
     "description": "Laravel User Proxy",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "license": "MIT",
     "type": "library",
     "require": {
