@@ -16,30 +16,21 @@ class LaravelUserProxyMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $lup_allowed_usernames = explode(',', env('LUP_ALLOWED_USERNAMES', ''));
-        $lup_allowed_usernames = array_map('trim', $lup_allowed_usernames);
-
-
-        if (session('proxy_mode') == true) {
-
-            $real_ms_username = session('real_ms_username');
-            if (!in_array($real_ms_username, $lup_allowed_usernames)) {
-                
-                abort(403);
         
-            }
-        }
-        
-        elseif (session('proxy_mode') == false) {
+        $app_env = env('APP_ENV');
 
-            $username = session('ms:username');
-            if (!in_array($username, $lup_allowed_usernames)) {
-                
-                abort(403);
+        // if $app_env is anything other than 'local', 'test', 'dev', do not allow access
 
-            }
+        if ($app_env != 'local' && $app_env != 'test' && $app_env != 'dev') {
+            
+            abort(403);
+
         }
 
-        return $next($request);
+        else {
+
+            return $next($request);
+
+        }
     }
 }
