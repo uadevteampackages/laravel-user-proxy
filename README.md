@@ -4,7 +4,6 @@
 This package allows you to test your app with a proxy user.
 
 
-
 ## Installation
 
 Laravel User Proxy can be installed with Composer, by running the following command from within your Laravel application's root directory.
@@ -16,7 +15,6 @@ composer require uadevteampackages/laravel-user-proxy
 ```
 
 After successful installation, you can access the Laravel User Proxy settings panel by browsing to the /lup route of your Laravel application.
-
 
 
 ## Set .env variables
@@ -33,24 +31,11 @@ LUP_AZURE_TENANT_ID=
 
 Those variables must match an Azure AD / Entra app that has proper permissions to read user information from Azure AD / Entra.
 
-You will also need to set the following variables in your Laravel application's .env file.  
 
 
-```
+## Package is only active in local, dev, or test app environments 
 
-LUP_ALLOWED_USERNAMES=user1,user2,user3
-
-
-```
-
-The value of LUP_ALLOWED_USERNAMES should be a comma-separated list of usernames of the users who should be allowed to access the Laravel User Proxy settings.  The Laravel User Proxy package will only be enabled if the ms:username value in your session variables matches one of the usernames in this list.  (These should be formatted as username only, not email addresses or userPrincipalNames, etc.).
-
-
-
-## Package is only active in certain app environments (local, dev, test)
-
-Even after installation, the Laravel User Proxy package will only be active and usable in your application if your ms:username value is listed in the LUP_ALLOWED_USERNAMES .env variable and the APP_ENV .env variable is set to one of the following values:  local, dev, test.
-
+The Laravel User Proxy package will only be active and usable in your application if the APP_ENV .env variable is set to one of the following values:  local, dev, test.
 
 
 
