@@ -10,7 +10,8 @@ Laravel User Proxy can be installed with Composer, by running the following comm
 
 ```
 
-composer require uadevteampackages/laravel-user-proxy
+composer require uadevteampackages/laravel-user-proxy --dev
+
 
 ```
 
