@@ -23,6 +23,8 @@
                 padding-right: 28px; 
                 padding-top: 20px; 
                 padding-bottom: 20px;
+                font-family: Arial, sans-serif;
+                line-height: 1.4;  
             }
 
             .lup_heading_container h1 {
@@ -88,7 +90,9 @@
                 border-width: 1px;      
                 border-color: black;      
                 border-style: solid;      
-                padding: 20px;            
+                padding: 20px; 
+                font-family: Arial, sans-serif;
+                line-height: 1.4;             
             }
 
             .lup_body_container h2 {
@@ -182,6 +186,7 @@
                 <li>Search for a user by entering their userPrincipalName (mybamausername@ua.edu for faculty/staff, mybamausername@crimson.ua.edu for students).</li>
                 <li>View the user's information from Microsoft Entra (Azure AD).</li>
                 <li>If you have found the right user and would like to test the app as that user, click the "Enter Proxy Mode as the Above User" button.</li>
+                <li>Once you enter proxy mode, you will need to visit the app home page (or other app pages) to access the app as the proxy user would. This is because the routes within the Laravel User Proxy settings do not use your application's middleware by default, so these settings pages most likely will not reflect the proxy user's experience.</li>
                 <li>When you are finished testing as the proxy user, click the "Exit User Proxy Mode" button.  This will clear out all session variables and log you out of the application completely.  At that point, you can start fresh with a new login in non-proxy mode.</li>
             </ol>
 

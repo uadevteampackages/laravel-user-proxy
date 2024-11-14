@@ -23,6 +23,8 @@
                 padding-right: 28px; 
                 padding-top: 20px; 
                 padding-bottom: 20px;
+                font-family: Arial, sans-serif;
+                line-height: 1.4;  
             }
 
             .lup_heading_container h1 {
@@ -89,7 +91,9 @@
                 border-width: 1px;      
                 border-color: black;      
                 border-style: solid;      
-                padding: 20px;            
+                padding: 20px; 
+                font-family: Arial, sans-serif;
+                line-height: 1.4;             
             }
 
             .lup_body_container h2 {
